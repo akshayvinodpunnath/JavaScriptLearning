@@ -2,26 +2,30 @@ const defaultResult = 0;
 let currentResult = defaultResult ;
 
 function add() {
-    const calcDescription = `${currentResult} + ${userInput.value}`;
-    currentResult = currentResult + parseInt(userInput.value);
+    const enteredNumber = parseInt(userInput.value);
+    const calcDescription = `${currentResult} + ${enteredNumber}`;
+    currentResult = currentResult + parseInt(enteredNumber);
     outputResult(currentResult, calcDescription);
 }
 
 function multiply() {
-    const calcDescription = `${currentResult} * ${userInput.value}`;
-    currentResult = currentResult * parseInt(userInput.value);
+    const enteredNumber = parseInt(userInput.value);
+    const calcDescription = `${currentResult} * ${enteredNumber}`;
+    currentResult = currentResult * parseInt(enteredNumber);
     outputResult(currentResult, calcDescription);
 }
 
 function subtract() {
-    const calcDescription = `${currentResult} - ${userInput.value}`;
-    currentResult = currentResult - parseInt(userInput.value);
+    const enteredNumber = parseInt(userInput.value);
+    const calcDescription = `${currentResult} / ${enteredNumber}`;
+    currentResult = currentResult / parseInt(enteredNumber);
     outputResult(currentResult, calcDescription);
 }
 
 function divide() {
-    const calcDescription = `${currentResult} / ${userInput.value}`;
-    currentResult = currentResult / parseInt(userInput.value);
+    const enteredNumber = parseInt(userInput.value);
+    const calcDescription = `${currentResult} / ${enteredNumber}`;
+    currentResult = currentResult / parseInt(enteredNumber);
     outputResult(currentResult, calcDescription);
 }
 
