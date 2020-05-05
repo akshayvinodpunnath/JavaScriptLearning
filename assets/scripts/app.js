@@ -16,7 +16,7 @@ function createAndWriteOutput (operator, resultBeforeCalc, calcNumber) {
 function add() {
     const enteredNumber = getUserInput();
     const initialResult = currentResult;
-    currentResult = currentResult + parseInt(enteredNumber);
+    currentResult += parseInt(enteredNumber);
     createAndWriteOutput('+',initialResult,enteredNumber);
 }
 
@@ -24,7 +24,7 @@ function add() {
 function multiply() {
     const enteredNumber = getUserInput();
     const initialResult = currentResult;
-    currentResult = currentResult * parseInt(enteredNumber);
+    currentResult *= parseInt(enteredNumber);
     createAndWriteOutput('*',initialResult,enteredNumber);
 }
 
@@ -32,7 +32,7 @@ function multiply() {
 function subtract() {
     const enteredNumber = getUserInput();
     const initialResult = currentResult;
-    currentResult = currentResult - parseInt(enteredNumber);
+    currentResult -= parseInt(enteredNumber);
     createAndWriteOutput('-',initialResult,enteredNumber);
 }
 
@@ -40,7 +40,7 @@ function subtract() {
 function divide() {
     const enteredNumber = getUserInput();
     const initialResult = currentResult;
-    currentResult = currentResult / parseInt(enteredNumber);
+    currentResult /= parseInt(enteredNumber);
     createAndWriteOutput('/',initialResult,enteredNumber);
 }
 
