@@ -79,3 +79,40 @@ resetCalc.addEventListener('click', calcReset);
 oneBtn.addEventListener('click', function() {
     numberButton(1);
 },false);
+
+twoBtn.addEventListener('click', function() {
+    numberButton(2);
+},false);
+
+
+threeBtn.addEventListener('click', function() {
+    numberButton(3);
+},false);
+
+fourBtn.addEventListener('click', function() {
+    numberButton(4);
+},false);
+
+fiveBtn.addEventListener('click', function() {
+    numberButton(5);
+},false);
+
+sixBtn.addEventListener('click', function() {
+    numberButton(6);
+},false);
+
+sevenBtn.addEventListener('click', function() {
+    numberButton(7);
+},false);
+
+eightBtn.addEventListener('click', function() {
+    numberButton(8);
+},false);
+
+nineBtn.addEventListener('click', function() {
+    numberButton(9);
+},false);
+
+zeroBtn.addEventListener('click', function() {
+    numberButton(0);
+},false);
