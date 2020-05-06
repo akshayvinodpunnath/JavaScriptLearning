@@ -65,9 +65,17 @@ function calcReset() {
     userInput.value = 0
 }
 
+function numberButton(num) {
+    userInput.value = num
+}
+
 // Calling Event Handlers
 addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
 multiplyBtn.addEventListener('click', multiply);
 divideBtn.addEventListener('click', divide);
 resetCalc.addEventListener('click', calcReset);
+
+oneBtn.addEventListener('click', function() {
+    numberButton(1);
+},false);
