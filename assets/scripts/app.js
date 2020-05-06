@@ -1,6 +1,6 @@
 const defaultResult = 0;
 let currentResult = defaultResult ;
-let logEntries = [];
+let logEntries = [defaultResult];
 
 // Gets input from input field
 function getUserInput () {
@@ -19,8 +19,8 @@ function add() {
     const initialResult = currentResult;
     currentResult += parseInt(enteredNumber);
     createAndWriteOutput('+',initialResult,enteredNumber);
-    logEntries.push(enteredNumber);
     logEntries.push('+');
+    logEntries.push(enteredNumber);
     console.log(logEntries);
 }
 
@@ -30,8 +30,8 @@ function multiply() {
     const initialResult = currentResult;
     currentResult *= parseInt(enteredNumber);
     createAndWriteOutput('*',initialResult,enteredNumber);
-    logEntries.push(enteredNumber);
     logEntries.push('*');
+    logEntries.push(enteredNumber);
     console.log(logEntries)
 }
 
@@ -41,8 +41,8 @@ function subtract() {
     const initialResult = currentResult;
     currentResult -= parseInt(enteredNumber);
     createAndWriteOutput('-',initialResult,enteredNumber);
-    logEntries.push(enteredNumber);
     logEntries.push('-');
+    logEntries.push(enteredNumber);
     console.log(logEntries)
 }
 
@@ -52,16 +52,17 @@ function divide() {
     const initialResult = currentResult;
     currentResult /= parseInt(enteredNumber);
     createAndWriteOutput('/',initialResult,enteredNumber);
-    logEntries.push(enteredNumber);
     logEntries.push('/');
+    logEntries.push(enteredNumber);
     console.log(logEntries)
 }
 
 function calcReset() {
-    logEntries = [];
-    defaultResult = 0;
     currentResult = defaultResult ;
-    outputResult(currentResult, '')
+    logEntries = []
+    logEntries.push(defaultResult);
+    outputResult(currentResult, '');
+    userInput.value = 0
 }
 
 // Calling Event Handlers
@@ -69,4 +70,4 @@ addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
 multiplyBtn.addEventListener('click', multiply);
 divideBtn.addEventListener('click', divide);
-//resetCalc.addEventListener('click', calcReset);
+resetCalc.addEventListener('click', calcReset);

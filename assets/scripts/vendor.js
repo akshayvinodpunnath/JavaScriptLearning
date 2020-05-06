@@ -5,6 +5,7 @@ const multiplyBtn = document.getElementById('btn-multiply');
 const divideBtn = document.getElementById('btn-divide');
 const resetCalc = document.getElementById('reset-calc');
 
+
 const currentResultOutput = document.getElementById('current-result');
 const currentCalculationOutput = document.getElementById('current-calculation');
 
