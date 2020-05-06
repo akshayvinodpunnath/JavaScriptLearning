@@ -50,7 +50,8 @@ header {
   outline: none;
 }
 
-#calculator button {
+#calculator button,
+#results button {
   font: inherit;
   background: #023d6d;
   color: white;
@@ -59,12 +60,15 @@ header {
   cursor: pointer;
 }
 
-#calculator button:focus {
+#calculator button:focus,
+#results button:focus {
   outline: none;
 }
 
 #calculator button:hover,
-#calculator button:active {
+#calculator button:active,
+#results button:hover,
+#results button:active {
   background: #084f88;
   border-color: #084f88;
 }
@@ -77,3 +81,4 @@ header {
   margin-top: 1rem;
   text-align: center;
 }
+
