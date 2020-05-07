@@ -1,118 +1,67 @@
 const defaultResult = 0;
-let currentResult = defaultResult ;
-let logEntries = [defaultResult];
+let currentResult = defaultResult;
+let logEntries = [];
 
 // Gets input from input field
-function getUserInput () {
-    return parseInt(userInput.value);
+function getUserNumberInput() {
+  return parseInt(usrInput.value);
 }
 
 // Generates and writes calculation log
-function createAndWriteOutput (operator, resultBeforeCalc, calcNumber) {
-    const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
-    outputResult(currentResult, logEntries.join(' ')); // from vendor file
+function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
+  const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+  outputResult(currentResult, calcDescription); // from vendor file
 }
 
-// Add functionality
+function writeToLog(
+  operationIdentifier,
+  prevResult,
+  operationNumber,
+  newResult
+) {
+  const logEntry = {
+    operation: operationIdentifier,
+    prevResult: prevResult,
+    number: operationNumber,
+    result: newResult
+  };
+  logEntries.push(logEntry);
+  console.log(logEntries);
+}
+
 function add() {
-    const enteredNumber = getUserInput();
-    const initialResult = currentResult;
-    currentResult += parseInt(enteredNumber);
-    createAndWriteOutput('+',initialResult,enteredNumber);
-    logEntries.push('+');
-    logEntries.push(enteredNumber);
-    console.log(logEntries);
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult += enteredNumber;
+  createAndWriteOutput('+', initialResult, enteredNumber);
+  writeToLog('ADD', initialResult, enteredNumber, currentResult);
 }
 
-// Multiply functionality
-function multiply() {
-    const enteredNumber = getUserInput();
-    const initialResult = currentResult;
-    currentResult *= parseInt(enteredNumber);
-    createAndWriteOutput('*',initialResult,enteredNumber);
-    logEntries.push('*');
-    logEntries.push(enteredNumber);
-    console.log(logEntries)
-}
-
-// Subtract functionality
 function subtract() {
-    const enteredNumber = getUserInput();
-    const initialResult = currentResult;
-    currentResult -= parseInt(enteredNumber);
-    createAndWriteOutput('-',initialResult,enteredNumber);
-    logEntries.push('-');
-    logEntries.push(enteredNumber);
-    console.log(logEntries)
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult -= enteredNumber;
+  createAndWriteOutput('-', initialResult, enteredNumber);
+  writeToLog('SUBTRACT', initialResult, enteredNumber, currentResult);
 }
 
-// Divide functionality
+function multiply() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult *= enteredNumber;
+  createAndWriteOutput('*', initialResult, enteredNumber);
+  writeToLog('MULTIPLY', initialResult, enteredNumber, currentResult);
+}
+
 function divide() {
-    const enteredNumber = getUserInput();
-    const initialResult = currentResult;
-    currentResult /= parseInt(enteredNumber);
-    createAndWriteOutput('/',initialResult,enteredNumber);
-    logEntries.push('/');
-    logEntries.push(enteredNumber);
-    console.log(logEntries)
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult /= enteredNumber;
+  createAndWriteOutput('/', initialResult, enteredNumber);
+  writeToLog('DIVIDE', initialResult, enteredNumber, currentResult);
 }
 
-function calcReset() {
-    currentResult = defaultResult ;
-    logEntries = []
-    logEntries.push(defaultResult);
-    outputResult(currentResult, '');
-    userInput.value = 0
-}
-
-function numberButton(num) {
-    userInput.value = num
-}
-
-// Calling Event Handlers
 addBtn.addEventListener('click', add);
 subtractBtn.addEventListener('click', subtract);
 multiplyBtn.addEventListener('click', multiply);
 divideBtn.addEventListener('click', divide);
-resetCalc.addEventListener('click', calcReset);
-
-oneBtn.addEventListener('click', function() {
-    numberButton(1);
-},false);
-
-twoBtn.addEventListener('click', function() {
-    numberButton(2);
-},false);
-
-
-threeBtn.addEventListener('click', function() {
-    numberButton(3);
-},false);
-
-fourBtn.addEventListener('click', function() {
-    numberButton(4);
-},false);
-
-fiveBtn.addEventListener('click', function() {
-    numberButton(5);
-},false);
-
-sixBtn.addEventListener('click', function() {
-    numberButton(6);
-},false);
-
-sevenBtn.addEventListener('click', function() {
-    numberButton(7);
-},false);
-
-eightBtn.addEventListener('click', function() {
-    numberButton(8);
-},false);
-
-nineBtn.addEventListener('click', function() {
-    numberButton(9);
-},false);
-
-zeroBtn.addEventListener('click', function() {
-    numberButton(0);
-},false);
