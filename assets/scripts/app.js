@@ -29,6 +29,18 @@ function writeToLog(
   console.log(logEntries);
 }
 
+function calculateResult(calculationType) {
+    const enteredNumber = getUserNumberInput();
+    const initialResult = currentResult;
+    if (calculationType === 'add' ) {
+        currentResult += enteredNumber;
+    } else {
+        currentResult -= enteredNumber;
+    }
+    createAndWriteOutput('+', initialResult, enteredNumber);
+    writeToLog('ADD', initialResult, enteredNumber, currentResult);    
+}
+
 function add() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
