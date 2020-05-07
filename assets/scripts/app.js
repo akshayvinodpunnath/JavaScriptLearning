@@ -32,13 +32,16 @@ function writeToLog(
 function calculateResult(calculationType) {
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;
+    let mathOperator;
     if (calculationType === 'add' ) {
         currentResult += enteredNumber;
+        mathOperator = '+'
     } else {
         currentResult -= enteredNumber;
+        mathOperator = '-'
     }
-    createAndWriteOutput('+', initialResult, enteredNumber);
-    writeToLog('ADD', initialResult, enteredNumber, currentResult);    
+    createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+    writeToLog(calculationType, initialResult, enteredNumber, currentResult);    
 }
 
 function add() {
